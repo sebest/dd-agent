@@ -31,6 +31,7 @@
         </Directory>
 
         <Binary Id="FindReplace" SourceFile="$(var.WixRoot)\FindReplace.exe" />
+
         <CustomAction
             Id="ReplaceAPIKey"
             BinaryKey="FindReplace"
@@ -59,6 +60,12 @@
             Id="LaunchApp"
             Directory="FILESDIR"
             ExeCommand="[SystemFolder]cmd.exe /C start agent-manager.exe" />
+
+        <CustomAction Id="KillJMX"
+            Directory="FILESDIR"
+            Execute="deferred"
+            Impersonate="no"
+            ExeCommand="wmic.exe process where &quot;CommandLine like '%org.datadog.jmxfetch.App%'&quot; delete" />
 
         <DirectoryRef Id="APPLICATIONROOTDIRECTORY">
             <Directory Id="INSTALLDIR" Name="Datadog Agent">
@@ -144,6 +151,7 @@
             <Custom Action="ReplaceAPIKey" Before="StartServices" />
             <Custom Action="ReplaceTags" Before="StartServices" />
             <Custom Action="ReplaceHostname" Before="StartServices" />
+            <Custom Action="KillJMX" After="StopServices"/>
         </InstallExecuteSequence>
 
         <CustomAction Id="LaunchApplication"
