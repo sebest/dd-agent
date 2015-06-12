@@ -1,8 +1,8 @@
 # stdlib
+from collections import namedtuple
 import subprocess
 
 # project
-from collections import namedtuple
 from resources import (
     agg,
     ResourcePlugin,
@@ -13,8 +13,8 @@ from resources import (
 
 class Processes(ResourcePlugin):
 
-    RESOURCE_KEY   = "processes"
-    FLUSH_INTERVAL = 1 # in minutes
+    RESOURCE_KEY = "processes"
+    FLUSH_INTERVAL = 1  # in minutes
 
     def describe_snapshot(self):
         return SnapshotDescriptor(1,
