@@ -1,0 +1,42 @@
+{
+  "version": "0.8.21",
+  "uptime": 268369,
+  "geoip":{
+    "modified": "1434314714",
+    "signature": "43dc15315ef6d52a4130d352f4ea77c5"
+  },
+  "processors": {
+    "items": 2226,
+    "uniques": 19822,
+    "clients": 3048,
+    "clients_timeouts": 23463,
+    "backends":874321,
+    "backends_timeouts":3,
+    "requests":6793985,
+    "index":34113,
+    "200":4506802,
+    "206":413505,
+    "304":10109,
+    "404":14094,
+    "412":0,
+    "416":1394,
+    "503":961,
+    "400":695,
+    "403":1834422,
+    "405":23,
+    "505":0
+  },
+  "resolver": {
+    "items":415,
+    "requests":53529,
+    "hits":4046,
+    "failed":26
+  },
+  "cleaner":{
+    "items":50746,
+    "maxage":102715,
+    "reports":194188,
+    "deletes":5838,
+    "cleaners":0
+  }
+}

@@ -46,6 +46,7 @@ env:
     - TRAVIS_FLAVOR=etcd
     - TRAVIS_FLAVOR=fluentd
     - TRAVIS_FLAVOR=go_expvar
+    - TRAVIS_FLAVOR=fileparser
     # FIXME: cannot enable gearman on Travis right now
     # because it needs boost
     # - TRAVIS_FLAVOR=gearman

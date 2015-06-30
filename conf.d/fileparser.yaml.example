@@ -1,0 +1,11 @@
+init_config:
+    http_timeout: 15
+
+instances:
+    - url: http://127.0.0.1/server-status
+      prefix: lumberjack
+      mapping_separator: .
+      mapping:
+          processors.items:
+              path: processors.items
+              type: rate
